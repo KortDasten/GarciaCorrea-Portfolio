@@ -25,7 +25,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'garciacorrea-portfolio-2.onrender.com',  # <-- Ang Render URL
+    '.onrender.com', # Added wildcard for safety
+    '127.0.0.1', 
+    'localhost', 
+]
 
 
 # Application definition
