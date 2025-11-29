@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # WARNING: Don't run with debug turned on in production!
 # Tiyakin na ito ay 'False' sa production
-DEBUG = True 
+DEBUG = False 
 
 # 🔴 FIX 2: ALLOWED_HOSTS para sa Render URL
 ALLOWED_HOSTS = [
