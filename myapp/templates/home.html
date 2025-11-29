@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G&C | Modern Portfolio</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
     <style>
-        /* ADDITIONS to your existing style.css */
-        body { background-color: #1a1a2e; color: #e5e5e5; }
-        nav { background: #0f4c75; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        body { background-color: #1a1a2e; color: #e5e5e5; font-family: Arial, sans-serif; margin: 0; padding: 0;}
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        nav { background: #0f4c75; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); padding: 15px 0; }
+        nav .logo { font-size: 1.8rem; font-weight: bold; color: white; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: flex-end; }
+        nav ul li { margin-left: 25px; }
+        nav ul a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav ul a:hover { color: #b0c7e5; }
+        
         .hero { 
             background: #1a1a2e; 
             min-height: 80vh;
@@ -19,41 +26,65 @@
             align-items: center;
             text-align: center;
             border-bottom: 2px solid #34495e;
+            padding: 40px 0;
         }
-        .hero h1 { font-size: 3.5rem; color: #e5e5e5; }
-        .intro-text { max-width: 800px; margin-top: 20px; font-size: 1.2rem; color: #b0c7e5; }
+        .hero h1 { font-size: 3.5rem; color: #e5e5e5; margin-bottom: 20px; }
+        .intro-text { max-width: 800px; margin-top: 20px; font-size: 1.2rem; color: #b0c7e5; line-height: 1.6; }
+        .btn { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: #5aa9e6; 
+            color: #1a1a2e; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            transition: background-color 0.3s; 
+        }
+        .btn:hover { background-color: #4a98d0; }
+
+        /* PROFILE SECTION STYLES */
         .profile-section { background-color: #2c3e50; padding: 4rem 0; }
+        .profile-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #e5e5e5; }
+        .profile-grid { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
         .profile-card { 
             background: #1f3044; 
             border: 1px solid #0f4c75;
             color: #e5e5e5; 
             padding: 2rem; 
-            margin-bottom: 2rem;
-            text-align: left;
+            width: 350px; /* Fixed width for better layout */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center; /* Center content */
         }
-        .profile-card h3 { color: #b0c7e5; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; margin-bottom: 15px; }
+        .profile-card h3 { color: #b0c7e5; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.5rem; }
+        .profile-card p { text-align: left; }
+
+        /* PROJECT SECTION STYLES */
         .project-highlight { background-color: #1a1a2e; padding: 4rem 0; }
+        .project-highlight h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #e5e5e5; }
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .project-item { background: #1f3044; color: white; padding: 25px; border-radius: 8px; }
-        .project-item h4 { color: #5aa9e6; margin-bottom: 10px; }
-        footer { background: #0f4c75; }
+        .project-item h4 { color: #5aa9e6; margin-bottom: 10px; font-size: 1.3rem; }
+        
+        footer { background: #0f4c75; text-align: center; padding: 20px 0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">G&C Developers</div>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#profiles">Profiles</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">G&C Developers</div>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
     </nav>
 
     <header class="hero" id="about">
         <h1>Building the Future, One Commit at a Time.</h1>
         <p class="intro-text">
-            Welcome to the digital space of **Garcia and Correa**, where expertise in **Backend** (Django, Python) meets cutting-edge **Frontend** (UI/UX, CSS). We transform ideas into robust, user-friendly web applications.
+            Welcome to the digital space of <strong>Garcia and Correa</strong>, where expertise in <strong>Backend</strong> (Django, Python) meets cutting-edge <strong>Frontend</strong> (UI/UX, CSS). We transform ideas into robust, user-friendly web applications.
         </p>
         <a href="#profiles" class="btn" style="margin-top: 30px;">View Profiles</a>
     </header>
@@ -61,54 +92,5 @@
     <section id="profiles" class="profile-section">
         <div class="container">
             <h2>Our Core Expertise</h2>
-
-            <div class="profile-card">
-                <h3>Garcia - Backend Lead</h3>
-                <p><strong>Focus:</strong> Python, Django, API Development, PostgreSQL/SQLite</p>
-                <p>
-                    [Ilagay dito ang detalyadong description ni Garcia. Highlight ang technical skills at major contributions.]
-                </p>
-                <a href="LINK_TO_GARCIA_GITHUB" class="btn">GitHub Profile</a>
-            </div>
-
-            <div class="profile-card">
-                <h3>Correa - Frontend & Design</h3>
-                <p><strong>Focus:</strong> HTML5, Advanced CSS/SASS, JavaScript, UI/UX Principles</p>
-                <p>
-                    [Ilagay dito ang detalyadong description ni Correa. Highlight ang creative skills at design philosophy.]
-                </p>
-                <a href="LINK_TO_CORREA_LINKEDIN" class="btn">LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="project-highlight">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                
-                <div class="project-item">
-                    <h4>Project Dynamo (Full Stack)</h4>
-                    <p>A data visualization dashboard built using Django and D3.js. (Backend by Garcia, Frontend by Correa).</p>
-                </div>
-                
-                <div class="project-item">
-                    <h4>E-commerce API Gateway</h4>
-                    <p>Garcia's contribution: Secure and scalable RESTful API for handling product inventory and user authentication.</p>
-                </div>
-                
-                <div class="project-item">
-                    <h4>Responsive Landing Page Suite</h4>
-                    <p>Correa's contribution: Developed 5 fully responsive landing pages with high accessibility scores using pure CSS Grid.</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 G&C Developers. Designed for impact.</p>
-    </footer>
-
-</body>
-</html>
+            
+            <div class="profile-grid">
