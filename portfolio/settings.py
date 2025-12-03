@@ -16,8 +16,8 @@ DEBUG = False
 
 # 🔴 FIX 2: ALLOWED_HOSTS para sa Render URL
 ALLOWED_HOSTS = [
-    'garciacorrea-portfolio.onrender.com', # Ito ang kailangan para sa Render URL
-    '.onrender.com', # Para sa safety/wildcard
+    'garciacorrea-portfolio.onrender.com', # CRITICAL: Ang URL na nakita sa logs
+    '.onrender.com', 
     '127.0.0.1', 
     'localhost',
 ]
